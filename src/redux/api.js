@@ -7,7 +7,8 @@ export const api = createApi({
         baseUrl: "https://simple-backend-jxsu.onrender.com",
         credentials: "include",
         prepareHeaders: (headers) => {
-            const token = Cookies.get("jwt"); // Assuming you have a token stored in the auth slice
+            const token = Cookies.get("jwt");
+            console.log("token", token); // Assuming you have a token stored in the auth slice
             if (token) {
                 headers.set("Authorization", `Bearer ${token}`);
             }
